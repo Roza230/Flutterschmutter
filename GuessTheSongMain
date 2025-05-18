@@ -1,0 +1,111 @@
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp(MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: 'Guess the Song',
+      initialRoute: '/',
+      routes: {
+        '/': (context) => SplashScreen(),
+        '/instructions': (context) => InstructionsScreen(),
+        '/game': (context) => GameScreen(),
+      },
+    );
+  }
+}
+
+class SplashScreen extends StatelessWidget {
+  const SplashScreen({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: Container(
+        color: Colors.black, // or any background color you want
+        child: Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Image.asset('assets/images/GuessTheSong.png'),
+              SizedBox(height: 30),
+              Image.asset(
+                'assets/images/PlayBTN.png',
+                width: 120,
+              ),
+              SizedBox(height: 20),
+              GestureDetector(
+                onTap: () {
+                  Navigator.pushNamed(context, '/instructions');
+                },
+                child: Image.asset(
+                  'assets/images/BackBTN.png',
+                  width: 120,
+                ),
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+class InstructionsScreen extends StatelessWidget {
+  const InstructionsScreen({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      backgroundColor: Colors.black,
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Text(
+              'Instructions go here...',
+              style: TextStyle(color: Colors.white, fontSize: 18),
+            ),
+            SizedBox(height: 30),
+            GestureDetector(
+              onTap: () {
+                Navigator.pop(context); // Back to splash
+              },
+              child: Image.asset('assets/images/BackBTN.png', width: 100),
+            ),
+            SizedBox(height: 10),
+            GestureDetector(
+              onTap: () {
+                Navigator.pushNamed(context, '/game');
+              },
+              child: Image.asset('assets/images/PlayBTN.png', width: 100),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+class GameScreen extends StatelessWidget {
+  const GameScreen({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      backgroundColor: Colors.black,
+      body: Center(
+        child: Text(
+          'Game Screen',
+          style: TextStyle(color: Colors.white, fontSize: 24),
+        ),
+      ),
+    );
+  }
+}
