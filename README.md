@@ -23,7 +23,7 @@ If you're wondering whether using Flutter for hand-drawn UIs is a good idea: **i
 ![BackBTN](https://github.com/user-attachments/assets/6acb79f1-051b-4cc3-a91e-51e53c8fdb9e)
 ![InstrBTN](https://github.com/user-attachments/assets/156395c7-4ebe-40a8-b30a-80b6d2272119)
 ![PlayBTN](https://github.com/user-attachments/assets/e554b12c-e564-4b2d-bb56-7fd32056e773)
-
+**Like why aren't the bears aligned.. pfff what a pain, Git if you see this, fix it goddamn**
 
 # Bugs
 - Some widgets will self-destruct if placed in a **"ListView"**
